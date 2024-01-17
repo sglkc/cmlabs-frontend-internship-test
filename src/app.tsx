@@ -1,30 +1,20 @@
-import { useState } from 'preact/hooks'
 import Navbar from './components/Navbar/Navbar'
 
 export function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Navbar />
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-        </a>
-      </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
+      <section class="pt-16 pb-32 bg-gray-100 flex flex-col gap-8 items-center">
+        <div class="flex gap-8 text-(red 3xl)">
+          <div class="i-mdi:pot-steam" />
+          <div class="i-mdi:rice" />
+          <div class="i-mdi:cookie" />
+        </div>
+        <h1 class="fw-bold">mealapp API website</h1>
+        <h2 class="fw-black text-5xl">See All The Delicious Foods</h2>
+      </section>
+      <main>
+      </main>
     </>
   )
 }
