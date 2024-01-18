@@ -6,3 +6,11 @@ type Categories = {
     strCategoryThumb: string
   }>
 }
+
+type Meals = {
+  meals: Array<{
+    idMeal: number
+    strMeal: string
+    strMealThumb: string
+  }>
+}

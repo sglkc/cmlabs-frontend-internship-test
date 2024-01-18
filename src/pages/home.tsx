@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
-import Card from './components/Card'
-import Navbar from './components/Navbar/Navbar'
+import Card from '@/components/Card'
+import Navbar from '@/components/Navbar/Navbar'
 
-export default function App() {
+export default function Home() {
   const { data, isSuccess } = useQuery<Categories>({
     queryKey: ['categories'],
     queryFn: () =>
@@ -25,7 +25,12 @@ export default function App() {
       <main class="m-auto px-8 py-16 max-w-6xl grid grid-cols-3 sm:grid-cols-4 gap-4">
         { isSuccess
           ? data.categories.map(({ idCategory, strCategory, strCategoryThumb }) =>
-            <Card key={idCategory} text={strCategory} image={strCategoryThumb} />
+            <Card
+              key={idCategory}
+              href={'/category/' + strCategory}
+              text={strCategory}
+              image={strCategoryThumb}
+            />
           )
           : <>Fetching...</>
         }

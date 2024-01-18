@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 import UnoCSS from 'unocss/vite'
@@ -8,4 +9,9 @@ export default defineConfig({
     preact(),
     UnoCSS()
   ],
+  resolve: {
+    alias: {
+      '@': resolve('src')
+    }
+  }
 })
