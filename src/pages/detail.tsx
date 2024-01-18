@@ -9,13 +9,8 @@ type DetailProps = {
 
 export default function Detail({ category }: DetailProps) {
   const crumbs: BreadcrumbProps['crumbs'] = [
-    {
-      text: 'Foods',
-      href: '/'
-    },
-    {
-      text: category
-    }
+    { text: 'Foods', href: '/' },
+    { text: category }
   ]
 
   const { data, isSuccess } = useQuery<Meals>({
@@ -35,7 +30,13 @@ export default function Detail({ category }: DetailProps) {
         <main class="py-16 grid grid-cols-3 sm:grid-cols-4 gap-4">
           { isSuccess
             ? data.meals.map(({ idMeal, strMeal, strMealThumb }) =>
-              <Card key={idMeal} text={strMeal} image={strMealThumb} large />
+              <Card
+                key={idMeal}
+                href={`${location.pathname}/${idMeal}`}
+                text={strMeal}
+                image={strMealThumb}
+                large
+              />
             )
             : <>Fetching...</>
           }

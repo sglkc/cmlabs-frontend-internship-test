@@ -27,7 +27,7 @@ export default function Home() {
           ? data.categories.map(({ idCategory, strCategory, strCategoryThumb }) =>
             <Card
               key={idCategory}
-              href={'/category/' + strCategory}
+              href={'/' + strCategory}
               text={strCategory}
               image={strCategoryThumb}
             />

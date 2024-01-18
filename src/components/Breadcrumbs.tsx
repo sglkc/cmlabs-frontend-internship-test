@@ -1,6 +1,6 @@
 export type BreadcrumbProps = {
   crumbs: Array<{
-    text: string
+    text?: string
     href?: string
   }>
 }
@@ -17,7 +17,7 @@ export default function Breadcrumb({ crumbs }: BreadcrumbProps) {
       { crumbs.map(({ text, href }) => (
         <>
           <i class="i-mdi:chevron-right text-2xl" />
-          <a href={href}>{ text }</a>
+          <a href={href}>{ text ?? 'Loading...' }</a>
         </>
       ))
       }
